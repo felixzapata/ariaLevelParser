@@ -1,39 +1,31 @@
-var parserLevelHeadings = function () {
-
-	function _parser(headings) {
-		var len = headings.length,
-			i = 0;
-		for(; i < len; i++){
-			var headingTag = headings[i],
-				nodeName = headingTag.nodeName;
-				aria_level = nodeName.charAt(1);
+(function () {
+	'use strict';
+	function parser(headings) {
+		var len = headings.length, i, headingTag, nodeName, aria_level;
+		for (i = 0; i < len; i += 1) {
+			headingTag = headings[i];
+			nodeName = headingTag.nodeName;
+			aria_level = nodeName.charAt(1);
 			headingTag.setAttribute("role", "heading");
 			headingTag.setAttribute("aria-level", aria_level);
 		}
 	}
-
-	function init () {
-
+	function init() {
+		/*global document: false */
 		var h1 = document.getElementsByTagName("h1"),
 			h2 = document.getElementsByTagName("h2"),
 			h3 = document.getElementsByTagName("h3"),
 			h4 = document.getElementsByTagName("h4"),
 			h5 = document.getElementsByTagName("h5"),
 			h6 = document.getElementsByTagName("h6");
-			_parser(h1);
-			_parser(h2);
-			_parser(h3);
-			_parser(h4);
-			_parser(h5);
-			_parser(h6);
+		parser(h1);
+		parser(h2);
+		parser(h3);
+		parser(h4);
+		parser(h5);
+		parser(h6);
 	}
+	init();
+}());
 
-	return {
-		init : init
-	};
 
-}();
-
-jQuery(document).ready(function() {
-	parserLevelHeadings.init();
-});
