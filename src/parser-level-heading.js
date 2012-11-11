@@ -13,6 +13,7 @@ var parserLevelHeadings = function () {
 	}
 
 	function init () {
+
 		var h1 = document.getElementsByTagName("h1"),
 			h2 = document.getElementsByTagName("h2"),
 			h3 = document.getElementsByTagName("h3"),
