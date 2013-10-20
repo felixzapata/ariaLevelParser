@@ -8,7 +8,7 @@ This parser modify the code from [HTML5 outliner from Google Code](http://code.g
 You can obtaine the same result of the HTML5 outliner if you use the [HeadingsMap addon for Firefox](https://addons.mozilla.org/es/firefox/addon/headingsmap/?src=search).
 
 For more information about the HTML5 algorithm please visit, [Sections and Outlines of an HTML5 Document
-](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document)
+](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document).
 
 Tests pages
 -----------
