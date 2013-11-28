@@ -32,7 +32,7 @@
         }
     };
 
-    var _setAriaLevelHeading = function(sections) {
+    var _setAriaLevelHeading = function(sections, idx) {
     
         var i, j = 0,
             len = sections.length;
@@ -40,9 +40,9 @@
             var headingTag = sections[i].heading;
             if (headingTag.nodeName) {
                 headingTag.setAttribute("role", "heading");
-                headingTag.setAttribute("aria-level", i + 1);
+                headingTag.setAttribute("aria-level", idx);
             }
-            _setAriaLevelHeading(sections[i].sections);
+            _setAriaLevelHeading(sections[i].sections, idx + 1);
 
 
         }
@@ -90,7 +90,8 @@
                     sections: [currentSection],
                     startingNode: node,
                     ariaLevelHeading: function() {
-                        return _setAriaLevelHeading(this.sections);
+                        console.log(this.sections)
+                        return _setAriaLevelHeading(this.sections, 1);
                     }
                 };
                 return;
